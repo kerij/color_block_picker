@@ -1,0 +1,23 @@
+h1 {
+  color: purple;
+}
+#red {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+}
+#yellow {
+  background-color: yellow;
+  height: 100px;
+  width: 100px;
+}
+#green {
+  background-color: green;
+  height: 100px;
+  width: 100px;
+}
+#blue {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+}
