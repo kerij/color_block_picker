@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
 //make colored divs and append to DOM
-  $("#container").append('<div id="red"></div>');
-  $("#container").append('<div id="yellow"></div>');
-  $("#container").append('<div id="green"></div>');
-  $("#container").append('<div id="blue"></div>');
+  $("#container").append('<div id="red" class="colors"></div>');
+  $("#container").append('<div id="yellow" class="colors"></div>');
+  $("#container").append('<div id="green" class="colors"></div>');
+  $("#container").append('<div id="blue" class="colors"></div>');
 
 //pick a random number to choose color
   var choice;
@@ -28,45 +28,72 @@ $(document).ready(function() {
       $("#choice").append("green");
     break;
     case 4:
-      $("#choice").append("blue")
+      $("#choice").append("blue");
     break;
   }
 
   //did they pick the right div?
   $("#red").on("click", function() {
-    console.log(choice);
-    console.log((this).id)
     if (choice == 1 && (this).id == "red") {
-      alert ("You win!");
-    } else {
-      alert ("Try again.")
-    }
-  });
-  $("#yellow").on("click", function() {
-    console.log(choice);
-    console.log((this).id)
-    if (choice == 2 && (this).id == "yellow") {
-      alert ("You win!");
-    } else {
-      alert ("Try again.")
-    }
-  });
-  $("#green").on("click", function() {
-    console.log(choice);
-    console.log((this).id)
-    if (choice == 3 && (this).id == "green") {
-      alert ("You win!");
-    } else {
-      alert ("Try again.")
-    }
-  });
-  $("#blue").on("click", function() {
-    console.log(choice);
-    console.log((this).id)
-    if (choice == 4 && (this).id == "blue") {
-      alert ("You win!");
+      var again = confirm ("You win! Do you want to play again?");
+        if (again == true) {
+          location.reload();
+        } else {
+          window.location.href = "http://globalthermonuclearwar.net/";
+        }
     } else {
       alert ("Try again.");
     }
   });
+  $("#yellow").on("click", function() {
+    if (choice == 2 && (this).id == "yellow") {
+      var again = confirm ("You win! Do you want to play again?");
+        if (again == true) {
+          location.reload();
+        } else {
+          window.location.href = "http://globalthermonuclearwar.net/";
+        }
+    } else {
+      alert ("Try again.");
+    }
   });
+  $("#green").on("click", function() {
+    if (choice == 3 && (this).id == "green") {
+      var again = confirm ("You win! Do you want to play again?");
+        if (again == true) {
+          location.reload();
+        } else {
+          window.location.href = "http://globalthermonuclearwar.net/";
+        }
+    } else {
+      alert ("Try again.");
+    }
+  });
+  $("#blue").on("click", function() {
+    if (choice == 4 && (this).id == "blue") {
+      var again = confirm ("You win! Do you want to play again?");
+        if (again == true) {
+          location.reload();
+        } else {
+          window.location.href = "http://globalthermonuclearwar.net/";
+        }
+    } else {
+      alert ("Try again.");
+    }
+
+//trying with a for loop instead - not working
+  // var color = ["red", "yellow", "green", "blue"]
+  // $("div").on("click", ".colors", function() {
+  // for (var i = 1; i < 5; i++) {
+  //  if (choice = i && (this).id == color[i]);
+  //   var again = confirm ("You win! Do you want to play again?");
+  //    if (again == true) {
+  //      location.reload();
+  //    } else {
+  //      window.location.href = "http://globalthermonuclearwar.net/";
+  //    }
+  //  } else {
+  //  alert ("Try again.");
+  // });
+  });
+});
